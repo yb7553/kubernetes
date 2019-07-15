@@ -1,0 +1,13 @@
+---
+apiVersion: V1
+kind: Pod
+metadata: 
+  name: qz-pod
+  labels: 
+    app: web
+spec: 
+- containers: 
+    name: frontend
+    images: nginx
+    - containerport: 80
+        
