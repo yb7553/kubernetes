@@ -9,7 +9,7 @@ spec:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Recycle
   nfs:
-    server: 10.151.30.57
+    server: 40.73.118.55
     path: /data/k8s
 
 ---
