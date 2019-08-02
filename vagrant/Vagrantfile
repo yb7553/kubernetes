@@ -8,26 +8,16 @@ boxes = [
         :name => "master",
         :eth1 => "192.168.205.10",
         :mem => "2048",
-<<<<<<< HEAD
-        :cpu => "1"
+        :cpu => "2"
     },
     {
         :name => "node01",
         :eth1 => "192.168.205.11",
         :mem => "4096",
-        :cpu => "1"
+        :cpu => "2"
     }
 ]
-=======
-        :cpu => "2"
-    },
-	{
-        :name => "node01",
-        :eth1 => "192.168.205.11",
-        :mem => "2048",
-        :cpu => "2"
-    }]
->>>>>>> a1cb40ed797eb7aa42b4f154f41225f88843a85d
+
 
 Vagrant.configure(2) do |config|
 
