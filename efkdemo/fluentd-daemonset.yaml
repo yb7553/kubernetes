@@ -72,7 +72,7 @@ spec:
       annotations:
         scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
-      priorityClassName: system-node-critical
+      # priorityClassName: system-node-critical
       serviceAccountName: fluentd-es
       containers:
       - name: fluentd-es
@@ -90,7 +90,7 @@ spec:
         - name: varlog
           mountPath: /var/log
         - name: varlibdockercontainers
-          mountPath: /data/docker/containers
+          mountPath: /var/lib/docker/containers
           readOnly: true
         - name: config-volume
           mountPath: /etc/fluent/config.d
@@ -107,7 +107,7 @@ spec:
           path: /var/log
       - name: varlibdockercontainers
         hostPath:
-          path: /data/docker/containers
+          path: /var/lib/docker/containers
       - name: config-volume
         configMap:
           name: fluentd-config
