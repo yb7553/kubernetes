@@ -26,13 +26,6 @@ spec:
   template:
     metadata:
       labels:
-        app: kibana
-    spec:
-<<<<<<< HEAD
-=======
-      # nodeSelector:
-        # kubernetes.io/hostname: node03
->>>>>>> a1cb40ed797eb7aa42b4f154f41225f88843a85d
       containers:
       - name: kibana
         image: docker.elastic.co/kibana/kibana-oss:6.4.3
