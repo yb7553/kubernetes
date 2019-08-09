@@ -1,0 +1,90 @@
+1、下载文件
+
+https://github.com/dotbalo/k8s/
+ 
+
+2、创建namespace
+
+kubectl create namespace public-service
+　　如果不使用public-service，需要更改所有yaml文件的public-service为你namespace。
+
+sed -i "s#public-service#YOUR_NAMESPACE#g" *.yaml
+ 
+
+3、创建持久化pv
+
+　　此处采用的是静态PV方式，后端使用的是NFS，为了方便扩展可以使用动态PV较好。
+
+[root@nfs rabbitmq-cluster-1]# cat /etc/exports
+/k8s/rmq-cluster/rabbitmq-cluster-1/ *(rw,sync,no_subtree_check,no_root_squash)
+/k8s/rmq-cluster/rabbitmq-cluster-2/ *(rw,sync,no_subtree_check,no_root_squash)
+/k8s/rmq-cluster/rabbitmq-cluster-3/ *(rw,sync,no_subtree_check,no_root_squash)
+[root@k8s-master01 rabbitmq-cluster]# pwd
+/root/efk/rabbitmq-cluster
+[root@k8s-master01 rabbitmq-cluster]# ls
+rabbitmq-cluster-ss.yaml  rabbitmq-pv.yaml    rabbitmq-secret.yaml           rabbitmq-service-lb.yaml
+rabbitmq-configmap.yaml   rabbitmq-rbac.yaml  rabbitmq-service-cluster.yaml  README.md
+　　创建集群
+
+[root@k8s-master01 rabbitmq-cluster]# kubectl apply -f .
+ 
+
+4、查看
+
+　　pods、pv、pvc
+
+[root@k8s-master01 rabbitmq-cluster]# kubectl get pods -n public-service
+NAME            READY     STATUS    RESTARTS   AGE
+rmq-cluster-0   1/1       Running   0          40m
+rmq-cluster-1   1/1       Running   0          39m
+rmq-cluster-2   1/1       Running   0          39m
+复制代码
+[root@k8s-master01 rabbitmq-cluster]# kubectl get pv -n public-service
+NAME       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS    CLAIM                                           STORAGECLASS        REASON    AGE
+pv-rmq-1   4Gi        RWX            Recycle          Bound     public-service/rabbitmq-storage-rmq-cluster-2   rmq-storage-class             49m
+pv-rmq-2   4Gi        RWX            Recycle          Bound     public-service/rabbitmq-storage-rmq-cluster-1   rmq-storage-class             49m
+pv-rmq-3   4Gi        RWX            Recycle          Bound     public-service/rabbitmq-storage-rmq-cluster-0   rmq-storage-class             49m
+[root@k8s-master01 rabbitmq-cluster]# kubectl get pvc -n public-service
+NAME                             STATUS    VOLUME     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
+rabbitmq-storage-rmq-cluster-0   Bound     pv-rmq-3   4Gi        RWX            rmq-storage-class   48m
+rabbitmq-storage-rmq-cluster-1   Bound     pv-rmq-2   4Gi        RWX            rmq-storage-class   48m
+rabbitmq-storage-rmq-cluster-2   Bound     pv-rmq-1   4Gi        RWX            rmq-storage-class   48m
+[root@k8s-master01 rabbitmq-cluster]#
+复制代码
+　　services，此时使用的NodePort方式，可改为traefik模式
+
+[root@k8s-master01 rabbitmq-cluster]# kubectl get services -n public-service
+NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                          AGE
+rmq-cluster            ClusterIP   None            <none>        5672/TCP                         1h
+rmq-cluster-balancer   NodePort    10.107.221.85   <none>        15672:30051/TCP,5672:31892/TCP   1h
+ 
+
+5、访问测试
+
+　　通过NodePort的端口
+
+　　账号密码：guest
+
+
+
+ 
+
+6、存在问题
+
+　　上述yaml中有个secret
+
+复制代码
+[root@k8s-master01 rabbitmq-cluster]# cat rabbitmq-secret.yaml 
+kind: Secret
+apiVersion: v1
+metadata:
+  name: rmq-cluster-secret
+  namespace: public-service
+stringData:
+  cookie: ERLANG_COOKIE
+  password: RABBITMQ_PASS
+  url: amqp://RABBITMQ_USER:RABBITMQ_PASS@rmq-cluster-balancer
+  username: RABBITMQ_USER
+复制代码
+　　定义了username和password，然后在rabbitmq-cluster-ss.yaml引用作为默认账号密码，而且在configmap中也禁用了guest，但是没有生效。此问题待解决。
+
