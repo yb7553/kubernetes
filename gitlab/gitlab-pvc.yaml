@@ -5,7 +5,7 @@ metadata:
   namespace: public-service
 spec:
   accessModes: [ "ReadWriteMany" ]
-  storageClassName: "gluster-heketi"
+  storageClassName: "course-nfs-storage"
   resources:
     requests:
       storage: 5Gi
