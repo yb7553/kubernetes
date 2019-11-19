@@ -14,5 +14,5 @@ spec:
     # real share directory
     path: /data/k8s/gitlab-pg
     # nfs real ip
-    server: 192.168.103.6
+    server: 192.168.31.133
 
