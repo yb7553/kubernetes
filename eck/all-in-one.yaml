@@ -1159,14 +1159,14 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: elastic-operator
-  namespace: elastic-system-test
+  namespace: elastic-system
 
 ---
 
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: elastic-system-test
+  name: elastic-system
 
 ---
 
@@ -1174,7 +1174,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: elastic-operator
-  namespace: elastic-system-test
+  namespace: elastic-system
   labels:
     control-plane: elastic-operator
 spec:
@@ -1229,7 +1229,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: webhook-server-secret
-  namespace: elastic-system-test
+  namespace: elastic-system
 
 ---
 
@@ -1237,7 +1237,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: elastic-operator
-  namespace: elastic-system-test
+  namespace: elastic-system
 
 ---
 
