@@ -1,8 +1,14 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name:  nfs-pvc-deploy
 spec:
+  selector:
+    matchLabels:
+      app: nfs-pvc
+  selector:
+    matchLabels:
+      app: my-nginx
   replicas: 3
   template:
     metadata:
