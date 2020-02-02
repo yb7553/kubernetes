@@ -1,0 +1,6 @@
+dependencies:
+- name: zookeeper
+  repository: https://apphub.aliyuncs.com
+  version: 5.1.1
+digest: sha256:72f8ff50c1f40771700737447cfd857870cdfff385d6a8c44f19e54f4df81e67
+generated: "2020-01-06T20:29:47.952171717+08:00"
