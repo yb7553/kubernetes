@@ -10,7 +10,7 @@
 
 Master:
   Name: jenkins-master
-  Image: "jenkins/jenkins"
+  Image: "harbor.qoocar.com/library/jenkins/jenkins"
   ImageTag: "lts"
   ImagePullPolicy: "IfNotPresent"
 # ImagePullSecret: jenkins
@@ -92,7 +92,7 @@ Master:
 
 Agent:
   Enabled: true
-  Image: jenkins/jnlp-slave
+  Image: harbor.qoocar.com/library/jenkins/jnlp-slave
   ImageTag: 3.10-1
 # ImagePullSecret: jenkins
   Component: "jenkins-slave"

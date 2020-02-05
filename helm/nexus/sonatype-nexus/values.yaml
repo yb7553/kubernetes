@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: clearent/nexus
+  repository: harbor.qoocar.com/library/clearent/nexus
   tag: 3.5.1-02
 
 # node labels for node selection
@@ -54,7 +54,7 @@ persistence:
   ##
   storageClass: "harbor-data"
   accessMode: ReadWriteOnce
-  size: 8Gi
+  size: 1Gi
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little

@@ -1,14 +1,14 @@
 ## mysql image version
 ## ref: https://hub.docker.com/r/library/mysql/tags/
 ##
-image: "mysql"
+image: "harbor.qoocar.com/library/mysql"
 imageTag: "5.7.28"
 
 strategy:
   type: Recreate
 
 busybox:
-  image: "busybox"
+  image: "harbor.qoocar.com/library/busybox"
   tag: "1.29.3"
 
 testFramework:
