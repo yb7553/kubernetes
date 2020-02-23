@@ -48,7 +48,7 @@ metadata:
   namespace: public-service
 spec:
   accessModes: [ "ReadWriteMany" ]
-  storageClassName: "course-nfs-storage"
+  storageClassName: "harbor-data"
   resources:
     requests:
       storage: 3Gi

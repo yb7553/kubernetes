@@ -1,0 +1,14 @@
+apiVersion: v1
+appVersion: 6.3.0
+description: Apache SkyWalking APM System
+home: https://skywalking.apache.org
+icon: https://github.com/apache/skywalking-website/blob/master/docs/.vuepress/public/assets/logo.svg
+maintainers:
+- email: hanahmily@gmail.com
+  name: hanahmily
+- email: innerpeace.zhai@gmail.com
+  name: innerpeacez
+name: skywalking
+sources:
+- https://github.com/apache/skywalking-kubernetes
+version: 0.1.0

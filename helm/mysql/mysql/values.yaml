@@ -127,13 +127,26 @@ resources:
 configurationFilesPath: /etc/mysql/conf.d/
 
 # Custom mysql configuration files used to override default mysql settings
-configurationFiles: {}
+configurationFiles:
 #  mysql.cnf: |-
 #    [mysqld]
+# Jira
+#    default-storage-engine=INNODB
+#    character_set_server=utf8mb4
+#    innodb_default_row_format=DYNAMIC
+#    innodb_large_prefix=ON
+#    innodb_file_format=Barracuda
+#    innodb_log_file_size=2G
+# confluence
+#    max_allowed_packet=256M
+#    transaction-isolation=READ-COMMITTED
+#    binlog_format=row
+
 #    skip-name-resolve
 #    ssl-ca=/ssl/ca.pem
 #    ssl-cert=/ssl/server-cert.pem
 #    ssl-key=/ssl/server-key.pem
+    
 
 # Custom mysql init SQL files used to initialize the database
 initializationFiles: {}

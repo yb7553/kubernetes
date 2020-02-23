@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: gitlab
-        image: sameersbn/gitlab:11.5.1
+        image: harbor.qoocar.com/library/sameersbn/gitlab:11.8.1
         env:
         - name: TZ
           value: Asia/Shanghai
@@ -32,10 +32,10 @@ spec:
         - name: GITLAB_ROOT_PASSWORD
           value: gitlab123
         - name: GITLAB_ROOT_EMAIL
-          value: dukuan@haixiangjinfu.com
+          value: 23218371@qq.com
 
         - name: GITLAB_HOST
-          value: gitlab.xxx.net
+          value: gitlab.qoocar.com
         - name: GITLAB_PORT
           value: "80"
         - name: GITLAB_SSH_PORT
@@ -86,42 +86,6 @@ spec:
         - name: SMTP_AUTHENTICATION
           value: login
 
-        - name: IMAP_ENABLED
-          value: "false"
-        - name: IMAP_HOST
-          value: imap.gmail.com
-        - name: IMAP_PORT
-          value: "993"
-        - name: IMAP_USER
-          value: mailer@example.com
-        - name: IMAP_PASS
-          value: password
-        - name: IMAP_SSL
-          value: "true"
-        - name: IMAP_STARTTLS
-          value: "false"
-        - name: LDAP_ENABLED
-          value: "true"
-        - name: LDAP_LABEL
-          value: 'LDAP'
-        - name: LDAP_HOST
-          value: 'ldap-service'
-        - name: LDAP_PORT
-          value: '389'
-        - name: LDAP_UID
-          value: 'uid'
-        - name: LDAP_BIND_DN
-          value: 'cn=admin,dc=example,dc=org'
-        - name: LDAP_PASS
-          value: 'admin'
-        - name: LDAP_BASE
-          value: 'dc=example,dc=org'
-        - name: LDAP_ALLOW_USERNAME_OR_EMAIL_LOGIN
-          value: "true"
-        - name: LDAP_VERIFY_SSL
-          value: 'false'
-        - name: LDAP_METHOD
-          value: 'plain'
         
         ports:
         - name: http

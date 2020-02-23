@@ -41,7 +41,7 @@ securityContext:
 # schedulerName: "default-scheduler"
 
 image:
-  repository: "docker.elastic.co/elasticsearch/elasticsearch-oss"
+  repository: "harbor.qoocar.com/library/docker.elastic.co/elasticsearch/elasticsearch-oss"
   tag: "6.8.2"
   pullPolicy: "IfNotPresent"
   # If specified, use these secrets to access the image
@@ -157,9 +157,9 @@ client:
     enabled: true
     # user: NAME
     # password: PASSWORD
-    annotations:
+    annotations: 
       kubernetes.io/ingress.class: nginx
-      kubernetes.io/tls-acme: "true"
+      # kubernetes.io/tls-acme: "true"
     path: /
     hosts:
       - elasticsearch.qoocar.com
@@ -178,7 +178,7 @@ master:
     enabled: true
     accessMode: ReadWriteOnce
     name: data
-    size: "1Gi"
+    size: "4Gi"
     storageClass: "harbor-data"
   readinessProbe:
     httpGet:
@@ -232,7 +232,7 @@ data:
     enabled: true
     accessMode: ReadWriteOnce
     name: data
-    size: "1Gi"
+    size: "15Gi"
     storageClass: "harbor-data"
   readinessProbe:
     httpGet:

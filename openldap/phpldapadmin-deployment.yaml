@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: public-service
@@ -10,6 +10,9 @@ metadata:
     io.kompose.service: phpldapadmin
   name: phpldapadmin
 spec:
+  selector:
+    matchLabels:
+      app: openldap
   replicas: 1
   strategy: {}
   template:

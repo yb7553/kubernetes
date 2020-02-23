@@ -1,0 +1,6 @@
+dependencies:
+- name: elasticsearch
+  repository: https://apphub.aliyuncs.com
+  version: 1.28.2
+digest: sha256:98afb94738342bc24576bbd588f984f33a84ec8d0e472fa86e90f4c64c4560da
+generated: "2019-08-28T09:18:32.877320456+08:00"

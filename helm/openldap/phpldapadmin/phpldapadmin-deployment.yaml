@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: openldap
+  name: phpldapadmin
+spec:
+  selector:
+    matchLabels:
+      app: openldap
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: openldap
+    spec:
+      containers:
+      - env:
+        - name: PHPLDAPADMIN_HTTPS
+          value: "false"
+        - name: PHPLDAPADMIN_LDAP_HOSTS
+          value: openldap
+        image: dotbalo/lam
+        name: phpldapadmin
+        ports:
+        - containerPort: 80
+        resources: {}
+      restartPolicy: Always

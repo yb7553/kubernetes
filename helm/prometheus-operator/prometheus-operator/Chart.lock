@@ -1,0 +1,12 @@
+dependencies:
+- name: kube-state-metrics
+  repository: https://apphub.aliyuncs.com
+  version: 2.4.1
+- name: prometheus-node-exporter
+  repository: https://apphub.aliyuncs.com
+  version: 1.7.3
+- name: grafana
+  repository: https://apphub.aliyuncs.com
+  version: 4.0.3
+digest: sha256:1e15bd0d7ef7b3d01d5c8c3e22dbe52d45d4cae08629babc3d65258d13a1374b
+generated: "2019-11-21T06:51:38.564932955+08:00"

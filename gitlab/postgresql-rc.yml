@@ -64,7 +64,7 @@ metadata:
   namespace: public-service
 spec:
   accessModes: [ "ReadWriteMany" ]
-  storageClassName: "gitlab-pg-data"
+  storageClassName: "harbor-data"
   resources:
     requests:
       storage: 5Gi

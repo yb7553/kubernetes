@@ -170,10 +170,10 @@ securityContext:
 ##
 persistence:
   enabled: true
-  # storageClass: "-"
+  storageClass: "harbor-data"
   accessModes:
     - ReadWriteOnce
-  size: 8Gi
+  size: 1Gi
   annotations: {}
 
 ## Node labels for pod assignment

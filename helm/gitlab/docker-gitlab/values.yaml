@@ -2,7 +2,7 @@ expose:
   # Set the way how to expose the service. Set the type as "ingress","clusterIP","loadBalancer"
   # or "nodePort" and fill the information in the corresponding 
   # section
-  type: ingress
+  type: clusterIP
   tls:
     enabled: false
     # Fill the name of secret if you want to use your own TLS certificate
@@ -60,7 +60,7 @@ expose:
 # Specify another StorageClass in the "storageClass" or set "existingClaim"
 # if you have already existing persistent volumes to use
 persistence:
-  enabled: false
+  enabled: true
   # Setting it to "keep" to avoid removing PVCs during a helm delete 
   # operation. Leaving it empty will delete PVCs after the chart deleted
   resourcePolicy: "keep"

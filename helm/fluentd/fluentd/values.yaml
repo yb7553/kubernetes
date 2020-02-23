@@ -212,10 +212,10 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "harbor-data"
+  # storageClass: "-"
   # annotations: {}
   accessMode: ReadWriteOnce
-  size: 1Gi
+  size: 10Gi
 
 nodeSelector: {}
 
