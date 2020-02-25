@@ -119,3 +119,4 @@ networkPolicy:
 service:
   annotations: {}
   loadBalancerIP:
+  nodePort: 32379
