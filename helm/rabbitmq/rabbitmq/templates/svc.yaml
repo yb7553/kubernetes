@@ -16,11 +16,17 @@ spec:
   - name: amqp
     port: {{ default "5672" .Values.rabbitmqNodePort }}
     targetPort: amqp
+    {{- if .Values.service.nodePort }}
+    nodePort: {{ .Values.service.nodePort }}
+    {{- end }}
   - name: dist
     port: {{ default "5672" .Values.rabbitmqNodePort | add 20000 }}
     targetPort: dist
   - name: stats
     port: {{ default "15672" .Values.rabbitmqManagerPort }}
     targetPort: stats
+    {{- if .Values.service.nodePort }}
+    nodePort: {{ .Values.service.managerPort }}
+    {{- end }}
   selector:
     app: {{ template "rabbitmq.fullname" . }}
