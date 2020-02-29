@@ -24,6 +24,9 @@ spec:
   - name: redis
     port: 6379
     targetPort: redis
+    {{- if .Values.service.nodePort }}
+    nodePort: {{ .Values.service.nodePort }}
+    {{- end }}
   {{- if .Values.metrics.enabled }}
   - name: metrics
     port: 9121

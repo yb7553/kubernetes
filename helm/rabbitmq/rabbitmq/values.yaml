@@ -63,6 +63,10 @@ rabbitmqDiskFreeLimit: '"1GiB"'
 ## Kubernetes service type
 serviceType: NodePort
 
+service: 
+  nodePort: 32672
+  managerPort: 31672
+
 persistence:
   enabled: true
 

@@ -183,7 +183,7 @@ service:
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services---service-types
   type: NodePort
   port: 3306
-  # nodePort: 32000
+  nodePort: 32306
   # loadBalancerIP:
 
 ## Pods Service Account
