@@ -18,7 +18,7 @@ securityContext:
 
 # Settings to configure elasticsearch host requirements
 elasticsearch:
-  configureNode: true
+  configureNode: false
   bootstrapChecks: false
 
 service:
