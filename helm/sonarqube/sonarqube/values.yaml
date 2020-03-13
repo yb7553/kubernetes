@@ -19,7 +19,7 @@ securityContext:
 # Settings to configure elasticsearch host requirements
 elasticsearch:
   configureNode: true
-  bootstrapChecks: false
+  bootstrapChecks: true
 
 service:
   type: ClusterIP
