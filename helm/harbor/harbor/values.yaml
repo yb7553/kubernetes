@@ -23,7 +23,7 @@ expose:
     notarySecretName: ""
     # The common name used to generate the certificate, it's necessary
     # when the type isn't "ingress" and "secretName" is null
-    commonName: ""
+    commonName: "harbor.qoocar.com"
   ingress:
     hosts:
       core: harbor.qoocar.com
@@ -123,13 +123,13 @@ persistence:
       storageClass: "harbor-data"
       subPath: ""
       accessMode: ReadWriteOnce
-      size: 1Gi
+      size: 5Gi
     chartmuseum:
       existingClaim: ""
       storageClass: "harbor-data"
       subPath: ""
       accessMode: ReadWriteOnce
-      size: 1Gi
+      size: 5Gi
     jobservice:
       existingClaim: ""
       storageClass: "harbor-data"
@@ -242,7 +242,7 @@ imagePullSecrets:
 
 logLevel: debug
 # The initial password of Harbor admin. Change it from portal after launching Harbor
-harborAdminPassword: "123456"
+harborAdminPassword: "Harbor12345"
 # The secret key used for encryption. Must be a string of 16 chars.
 secretKey: "not-a-secure-key"
 
@@ -464,6 +464,7 @@ notary:
 database:
   # if external database is used, set "type" to "external"
   # and fill the connection informations in "external" section
+  # type: internal
   type: internal
   internal:
     image:
@@ -471,18 +472,18 @@ database:
       tag: v1.9.3
     # The initial superuser password for internal database
     password: "changeit"
-    # resources:
-    #  requests:
-    #    memory: 256Mi
-    #    cpu: 100m
+    resources:
+      requests:
+        memory: 256Mi
+        cpu: 100m
     nodeSelector: {}
     tolerations: []
     affinity: {}
   external:
     host: "192.168.0.1"
-    port: "5432"
-    username: "user"
-    password: "password"
+    port: "32432"
+    username: "postgres"
+    password: "postgres"
     coreDatabase: "registry"
     clairDatabase: "clair"
     notaryServerDatabase: "notary_server"

@@ -53,7 +53,7 @@ testFramework:
   tag: "0.4.0"
 
 initImage:
-  repository: "busybox"
+  repository: "harbor.qoocar.com/library/busybox"
   tag: "latest"
   pullPolicy: "Always"
 
