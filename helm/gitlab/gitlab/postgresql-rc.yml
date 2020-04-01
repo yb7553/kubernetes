@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: postgresql
-        image: harbor.qoocar.com/library/sameersbn/postgresql:10
+        image: harbor.sun.com/library/sameersbn/postgresql:10
         imagePullPolicy: IfNotPresent
         env:
         - name: DB_USER

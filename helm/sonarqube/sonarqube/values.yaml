@@ -36,7 +36,7 @@ ingress:
   enabled: true
   # Used to create an Ingress record.
   hosts:
-    - name: sonar.qoocar.com
+    - name: sonar.sun.com
       # default paths for "/" and "/*" will be added
       path: /
       # If a different path is defined, that path and {path}/* will be added to the ingress resource

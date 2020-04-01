@@ -79,7 +79,7 @@ service:
 ingress:
   enabled: true
   hosts:
-    - kibana.qoocar.com
+    - kibana.sun.com
     # - localhost.localdomain/kibana
   annotations:
     kubernetes.io/ingress.class: nginx

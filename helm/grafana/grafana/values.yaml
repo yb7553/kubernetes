@@ -35,7 +35,7 @@ server:
     ## Must be provided if Ingress is enabled
     ##
     hosts:
-      - grafana.qoocar.com
+      - grafana.sun.com
 
     ## Grafana Ingress path
     ## Optional, allows specifying paths for more flexibility

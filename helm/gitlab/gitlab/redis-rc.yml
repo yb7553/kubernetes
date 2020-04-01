@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: harbor.qoocar.com/library/sameersbn/redis
+        image: harbor.sun.com/library/sameersbn/redis
         ports:
         - name: redis
           containerPort: 6379

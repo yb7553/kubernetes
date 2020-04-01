@@ -23,11 +23,11 @@ expose:
     notarySecretName: ""
     # The common name used to generate the certificate, it's necessary
     # when the type isn't "ingress" and "secretName" is null
-    commonName: "harbor.qoocar.com"
+    commonName: "harbor.sun.com"
   ingress:
     hosts:
-      core: harbor.qoocar.com
-      notary: notary.qoocar.com
+      core: harbor.sun.com
+      notary: notary.sun.com
     # set to the type of ingress controller if it has specific requirements.
     # leave as `default` for most ingress controllers.
     # set to `gce` if using the GCE ingress controller
@@ -98,7 +98,7 @@ expose:
 # the IP address of k8s node
 #
 # If Harbor is deployed behind the proxy, set it as the URL of proxy
-externalURL: https://harbor.qoocar.com
+externalURL: https://harbor.sun.com
 
 # The persistence is enabled by default and a default StorageClass
 # is needed in the k8s cluster to provision volumes dynamicly.

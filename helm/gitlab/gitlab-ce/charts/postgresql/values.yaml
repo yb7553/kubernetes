@@ -1,5 +1,5 @@
 ## postgres image repository
-image: "harbor.qoocar.com/library/postgres"
+image: "harbor.sun.com/library/postgres"
 ## postgres image version
 ## ref: https://hub.docker.com/r/library/postgres/tags/
 ##

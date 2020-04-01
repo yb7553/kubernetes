@@ -41,7 +41,7 @@ securityContext:
 # schedulerName: "default-scheduler"
 
 image:
-  repository: "harbor.qoocar.com/library/docker.elastic.co/elasticsearch/elasticsearch-oss"
+  repository: "harbor.sun.com/library/docker.elastic.co/elasticsearch/elasticsearch-oss"
   tag: "6.8.2"
   pullPolicy: "IfNotPresent"
   # If specified, use these secrets to access the image
@@ -53,7 +53,7 @@ testFramework:
   tag: "0.4.0"
 
 initImage:
-  repository: "harbor.qoocar.com/library/busybox"
+  repository: "harbor.sun.com/library/busybox"
   tag: "latest"
   pullPolicy: "Always"
 
@@ -162,7 +162,7 @@ client:
       # kubernetes.io/tls-acme: "true"
     path: /
     hosts:
-      - elasticsearch.qoocar.com
+      - elasticsearch.sun.com
     tls: []
     #  - secretName: chart-example-tls
     #    hosts:

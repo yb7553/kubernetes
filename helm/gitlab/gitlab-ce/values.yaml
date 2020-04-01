@@ -1,7 +1,7 @@
 ## GitLab CE image
 ## ref: https://hub.docker.com/r/gitlab/gitlab-ce/tags/
 ##
-image: harbor.qoocar.com/library/gitlab/gitlab-ce:10.6.2-ce.0
+image: harbor.sun.com/library/gitlab/gitlab-ce:10.6.2-ce.0
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
@@ -12,7 +12,7 @@ imagePullPolicy: IfNotPresent
 ## The URL (with protocol) that your users will use to reach the install.
 ## ref: https://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
 ##
-externalUrl: http://gitlab.qoocar.com
+externalUrl: http://gitlab.sun.com
 
 ## Change the initial default admin password if set. If not set, you'll be
 ## able to set it when you first visit your install.
@@ -35,7 +35,7 @@ ingress:
   #- secretName: gitlab.cluster.local
   #  hosts:
   #  - gitlab.cluster.local
-  url: gitlab.qoocar.com
+  url: gitlab.sun.com
 
 ## Configure external service ports
 ## ref: http://kubernetes.io/docs/user-guide/services/

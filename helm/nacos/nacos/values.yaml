@@ -174,9 +174,9 @@ ingress:
   annotations: 
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-# http://nacos.qoocar.com/nacos/index.html#/login
+# http://nacos.sun.com/nacos/index.html#/login
   hosts:
-    - host: nacos.qoocar.com
+    - host: nacos.sun.com
       path: /
 
   tls: []

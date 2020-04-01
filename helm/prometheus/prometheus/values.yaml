@@ -59,7 +59,7 @@ alertmanager:
     ## Must be provided if Ingress is enabled
     ##
     hosts: 
-      - alertmanager.qoocar.com
+      - alertmanager.sun.com
       - domain.com/alertmanager
 
     ## alertmanager Ingress TLS configuration
@@ -434,7 +434,7 @@ server:
     ## Must be provided if Ingress is enabled
     ##
     hosts:
-      - prometheus.qoocar.com
+      - prometheus.sun.com
       - domain.com/prometheus
 
     ## Prometheus server Ingress TLS configuration
@@ -583,7 +583,7 @@ pushgateway:
     ## Must be provided if Ingress is enabled
     ##
     hosts: 
-      - pushgateway.qoocar.com
+      - pushgateway.sun.com
       - domain.com/pushgateway
 
     ## pushgateway Ingress TLS configuration

@@ -150,7 +150,7 @@ ingress:
     # nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
   path: /
   hosts:
-    - minio.qoocar.com
+    - minio.sun.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

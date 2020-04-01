@@ -207,7 +207,7 @@ ingress:
   ## Most likely this will be just one host, but in the event more hosts are needed, this is an array
   ##
   hosts:
-    - name: tomcat.qoocar.com
+    - name: tomcat.sun.com
       path: /
 
       ## Set this to true in order to enable TLS on the ingress record

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: gitlab
-        image: harbor.qoocar.com/library/sameersbn/gitlab:11.8.1
+        image: harbor.sun.com/library/sameersbn/gitlab:11.8.1
         env:
         - name: TZ
           value: Asia/Shanghai
@@ -35,7 +35,7 @@ spec:
           value: 23218371@qq.com
 
         - name: GITLAB_HOST
-          value: gitlab.qoocar.com
+          value: gitlab.sun.com
         - name: GITLAB_PORT
           value: "80"
         - name: GITLAB_SSH_PORT

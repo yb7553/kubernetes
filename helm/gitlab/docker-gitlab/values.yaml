@@ -13,7 +13,7 @@ expose:
     secretName: ""
     certExpiry: 3560
   ingress:
-    host: gitlab.qoocar.com
+    host: gitlab.sun.com
     annotations:
       ingress.kubernetes.io/ssl-redirect: "false"
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -96,7 +96,7 @@ imagePullPolicy: IfNotPresent
 
 core:
   image:
-    repository: harbor.qoocar.com/library/quay.azk8s.cn/setzero/docker-gitlab
+    repository: harbor.sun.com/library/quay.azk8s.cn/setzero/docker-gitlab
     tag: v12.1.6
   replicas: 1
   ## Additional deployment annotations
@@ -188,7 +188,7 @@ database:
   internal:
     # You can configure this image to use PostgreSQL.
     image:
-      repository: harbor.qoocar.com/library/dockerhub.azk8s.cn/sameersbn/postgresql
+      repository: harbor.sun.com/library/dockerhub.azk8s.cn/sameersbn/postgresql
       tag: 10-2
     # The initial superuser password for internal database
     password: "changeit"
@@ -215,7 +215,7 @@ redis:
   type: internal
   internal:
     image:
-      repository: harbor.qoocar.com/library/dockerhub.azk8s.cn/sameersbn/redis
+      repository: harbor.sun.com/library/dockerhub.azk8s.cn/sameersbn/redis
       tag: 4.0.9-2
     password: 
     ## Additional deployment annotations

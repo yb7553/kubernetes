@@ -50,7 +50,7 @@ ui:
       # kubernetes.io/tls-acme: "true"
     path: /
     hosts:
-      - skywalking.qoocar.com
+      - skywalking.sun.com
     tls: []
     #  - secretName: skywalking-tls
     #    hosts:
