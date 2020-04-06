@@ -18,13 +18,9 @@ securityContext:
 
 # Settings to configure elasticsearch host requirements
 elasticsearch:
-<<<<<<< HEAD
   configureNode: true
   bootstrapChecks: true
-=======
-  configureNode: false
-  bootstrapChecks: false
->>>>>>> e48bb8ec328b5160bd60b1fb4f145f7620d9441e
+
 
 service:
   type: ClusterIP

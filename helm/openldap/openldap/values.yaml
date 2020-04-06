@@ -49,7 +49,9 @@ service:
 
   loadBalancerIP: ""
   loadBalancerSourceRanges: []
-  type: ClusterIP
+  # type: ClusterIP
+  type: NodePort
+  nodePort: 32389
 
 # Default configuration for openldap as environment variables. These get injected directly in the container.
 # Use the env variables from https://github.com/osixia/docker-openldap#beginner-guide

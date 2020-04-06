@@ -98,3 +98,11 @@ PASSED: foolish-mouse-openldap-service-test-akmms
 ```
 
 It will confirm that we can do an ldapsearch with the default credentials
+
+
+kubectl get secret --namespace devops openldap -o jsonpath="{.data.LDAP_ADMIN_PASSWORD}" | base64 --decode; echo
+
+cn=admin,dc=example,dc=org
+
+wxzZR61hd2xe0KKxBw62fIXrE9M4TZQC
+

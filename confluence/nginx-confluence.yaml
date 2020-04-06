@@ -12,5 +12,5 @@ spec:
       paths:
       - backend:
           serviceName: confluence-svc
-          servicePort: 8080
+          servicePort: 8090
    

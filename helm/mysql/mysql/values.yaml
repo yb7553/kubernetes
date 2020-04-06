@@ -128,8 +128,8 @@ configurationFilesPath: /etc/mysql/conf.d/
 
 # Custom mysql configuration files used to override default mysql settings
 configurationFiles:
-#  mysql.cnf: |-
-#    [mysqld]
+  mysql.cnf: |-
+    [mysqld]
 # Jira
 #    default-storage-engine=INNODB
 #    character_set_server=utf8mb4
@@ -141,6 +141,7 @@ configurationFiles:
 #    max_allowed_packet=256M
 #    transaction-isolation=READ-COMMITTED
 #    binlog_format=row
+    lower_case_table_names=1
 
 #    skip-name-resolve
 #    ssl-ca=/ssl/ca.pem
