@@ -203,7 +203,7 @@ elasticsearch:
       enabled: true
       accessMode: ReadWriteOnce
       name: data
-      size: "30Gi"
+      size: "3Gi"
       storageClass: "harbor-data"
     readinessProbe:
       httpGet:

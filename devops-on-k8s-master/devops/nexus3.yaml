@@ -42,9 +42,20 @@ spec:
               mountPath: /nexus-data
       volumes:
         - name: nexushome
-          hostPath:
-            path: /data/devops/nexus3/nexus-data
-            type: Directory
+          persistentVolumeClaim:
+            claimName: pvc-nexushome
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-nexushome
+  namespace: devops
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: "harbor-data"
+  resources:
+    requests:
+      storage: 5Gi
 ---
 apiVersion: v1
 kind: Service
@@ -61,8 +72,8 @@ spec:
  - name: web
    port: 8081
    targetPort: 8081
-   nodePort: 8081
+   nodePort: 32081
  - name: web2
    port: 8083
    targetPort: 8083
-   nodePort: 8083
+   nodePort: 32083

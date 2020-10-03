@@ -47,26 +47,82 @@ spec:
               mountPath: /opt/sonarqube/lib
       volumes:
         - name: sonarqube-conf
-          hostPath: 
-            path: /data/devops/sonar/conf
-            type: Directory
+          persistentVolumeClaim:
+            claimName: pvc-sonarqube-conf
         - name: sonarqube-log
-          hostPath: 
-            path: /data/devops/sonar/logs
-            type: Directory
+          persistentVolumeClaim:
+            claimName: pvc-sonarqube-log
         - name: sonarqube-data
-          hostPath: 
-            path: /data/devops/sonar/data
-            type: Directory
+          persistentVolumeClaim:
+            claimName: pvc-sonarqube-data
         - name: sonarqube-extensions
-          hostPath: 
-            path: /data/devops/sonar/extensions
-            type: Directory
+          persistentVolumeClaim:
+            claimName: pvc-sonarqube-extensions
         - name: sonarqube-lib
-          hostPath: 
-            path: /data/devops/sonar/lib
-            type: Directory
+          persistentVolumeClaim:
+            claimName: pvc-sonarqube-lib
       serviceAccountName: sonarqube
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-sonarqube-lib
+  namespace: devops
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: "harbor-data"
+  resources:
+    requests:
+      storage: 1Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-sonarqube-extensions
+  namespace: devops
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: "harbor-data"
+  resources:
+    requests:
+      storage: 1Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-sonarqube-data
+  namespace: devops
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: "harbor-data"
+  resources:
+    requests:
+      storage: 5Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-sonarqube-log
+  namespace: devops
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: "harbor-data"
+  resources:
+    requests:
+      storage: 1Gi
+---
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-sonarqube-conf
+  namespace: devops
+spec:
+  accessModes: [ "ReadWriteMany" ]
+  storageClassName: "harbor-data"
+  resources:
+    requests:
+      storage: 1Gi
 ---
 apiVersion: v1
 kind: ServiceAccount
