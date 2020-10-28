@@ -130,6 +130,7 @@ configurationFilesPath: /etc/mysql/conf.d/
 configurationFiles:
   mysql.cnf: |-
     [mysqld]
+    lower_case_table_names=1
 # Jira
 #    default-storage-engine=INNODB
 #    character_set_server=utf8mb4
@@ -141,7 +142,7 @@ configurationFiles:
 #    max_allowed_packet=256M
 #    transaction-isolation=READ-COMMITTED
 #    binlog_format=row
-    lower_case_table_names=1
+    
 
 #    skip-name-resolve
 #    ssl-ca=/ssl/ca.pem
