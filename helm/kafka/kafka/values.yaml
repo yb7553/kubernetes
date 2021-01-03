@@ -257,7 +257,7 @@ service:
   ## Specify the NodePort value for the LoadBalancer and NodePort service types.
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
   ##
-  # nodePort:
+  nodePort: 32092
 
   ## Use loadBalancerIP to request a specific static IP,
   # loadBalancerIP:

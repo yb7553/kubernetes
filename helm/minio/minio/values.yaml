@@ -116,10 +116,10 @@ persistence:
 ##
 
 service:
-  type: ClusterIP
-  clusterIP: ~
+  type: NodePort
+  # clusterIP: ~
   port: 9000
-  nodePort: 31311
+  nodePort: 32311
 
   ## List of IP addresses at which the Prometheus server service is available
   ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -136,7 +136,7 @@ service:
 ##
 
 ingress:
-  enabled: true
+  enabled: false
   labels: {}
     # node-role.kubernetes.io/ingress: platform
 
